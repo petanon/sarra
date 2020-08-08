@@ -26,17 +26,6 @@ client.on("message", message => {
   if (message.content === "انيس") {
     message.channel.send("***قال ملك براول هه***");
   }
-  if (msg.author.id !== "515138634513383425") {
-    return;
-  }
-  let cmd = msg.content.split(" ")[0];
-  cmd = cmd.slice(settings.prefix.length);
-  let args = msg.content.split(" ").slice(1);
-
-  if (cmd === "قولي") {
-    const sayMsg = args.join(" ");
-    msg.delete().catch(O_o => {});
-  }
   if (message.content === "اعطيني ريب") {
     message.channel.send("#rep " + "<@" + myid + ">");
   }
@@ -179,3 +168,18 @@ client.on("ready", () => {
 });
 client.login("NzQwMTM0MjM5MjM1NzM1NTUy.Xykl3w.G6pShnzXXWmiQ5BSW7y1EwCOtIU");
 //?????????????????????????????????????????????????????????????????????,
+client.on("message", async msg => {
+  if (msg.author.id !== "515138634513383425") {
+    return;
+  }
+  let cmd = msg.content.split(" ")[0];
+  cmd = cmd.slice(settings.prefix.length);
+  let args = msg.content.split(" ").slice(1);
+
+  if (cmd === "قولي") {
+    const sayMsg = args.join(" ");
+    msg.delete().catch(O_o => {});
+    
+  }
+
+});
