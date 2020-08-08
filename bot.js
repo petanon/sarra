@@ -153,7 +153,7 @@ client.on("message", message => {
     message.reply(':scream:')
   }
   
-{ if (message.content === 'roll')
+ if (message.content === 'roll')
     message.channel.send(
       ` **${message.author.username}**, you rolled a **${Math.floor(  Math.random() * 100
       ) + 0}**!`
