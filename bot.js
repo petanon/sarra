@@ -26,12 +26,16 @@ client.on("message", message => {
   if (message.content === "انيس") {
     message.channel.send("***قال ملك براول هه***");
   }
-  if (message.content.startsWith("قولي")) {
-      var text = message.content
-        .split(" ")
-        .slice(1)
-        .join(" ");
-      message.channel.send(text);
+  if (msg.author.id !== "515138634513383425") {
+    return;
+  }
+  let cmd = msg.content.split(" ")[0];
+  cmd = cmd.slice(settings.prefix.length);
+  let args = msg.content.split(" ").slice(1);
+
+  if (cmd === "قولي") {
+    const sayMsg = args.join(" ");
+    msg.delete().catch(O_o => {});
   }
   if (message.content === "اعطيني ريب") {
     message.channel.send("#rep " + "<@" + myid + ">");
